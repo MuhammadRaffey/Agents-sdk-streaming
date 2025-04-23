@@ -1,0 +1,15 @@
+[project]
+name = "practice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "Muhammad Raffey", email = "muhammadraffey26@gmail.com" }]
+requires-python = ">=3.11"
+dependencies = ["chainlit>=2.5.5", "openai-agents>=0.0.12"]
+
+[project.scripts]
+practice = "practice:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
