@@ -91,7 +91,7 @@ async def handle_message(message: cl.Message):
         input=history,
         run_config=config)
     async for event in result.stream_events():
-            if event.type == "raw_response_event" and hasattr(event.data, 'delta'):
+            if event.type == "raw_response_event" and isinstance(event.data, ResponseTextDeltaEvent):
                 token = event.data.delta
                 await msg.stream_token(token)
     history.append({
