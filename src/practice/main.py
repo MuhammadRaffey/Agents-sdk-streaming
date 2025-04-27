@@ -32,17 +32,17 @@ agent1=Agent(
 )
 
 # Streaming 
-async def main():
-    agent = Agent(
-        name="Joker",
-        instructions="You are a helpful assistant.",
+# async def main():
+#     agent = Agent(
+#         name="Joker",
+#         instructions="You are a helpful assistant.",
 
-    )
-    result=  Runner.run_streamed(agent1,input="Tell me Some Jokes on Noobs in PUBG",run_config=config)
-    # print(result.final_output)
-    async for event in result.stream_events():
-        if event.type == "raw_response_event" and isinstance(event.data, ResponseTextDeltaEvent):
-            print(event.data.delta, end="", flush=True)
+#     )
+#     result=  Runner.run_streamed(agent1,input="Tell me Some Jokes on Noobs in PUBG",run_config=config)
+#     # print(result.final_output)
+#     async for event in result.stream_events():
+#         if event.type == "raw_response_event" and isinstance(event.data, ResponseTextDeltaEvent):
+#             print(event.data.delta, end="", flush=True)
 
 # asyncio.run(main())
 
